@@ -1,0 +1,50 @@
+// colors
+$red       : #cd3208;
+$lightBlue : #b2ced3;
+$darkBlue  : #7fadb6;
+
+
+
+@mixin transform-origin($x: 50%,$y: 50%){
+  -webkit-transform-origin: $x $y; 
+	   -moz-transform-origin: $x $y; 
+	    -ms-transform-origin: $x $y; 
+	     -o-transform-origin: $x $y; 	
+	        transform-origin: $x $y;	
+}	
+	
+@mixin matrix($m: matrix(1,0,0,1,0,0)) {
+	-webkit-transform: $m; 
+	   -moz-transform: $m; 
+	    -ms-transform: $m; 
+	     -o-transform: $m; 	
+	        transform: $m;	
+}
+@mixin animation($name, $duration, $timing, $repeat, $direction){
+	-webkit-animation: $name $duration $timing $repeat $direction; /* Safari 5, Chrome */
+	-moz-animation: $name $duration $timing $repeat $direction; /* Firefox 5-15 */
+	-o-animation: $name $duration $timing $repeat $direction; /* Opera 12+ */
+	animation: $name $duration $timing $repeat $direction;
+  }
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+
+
+// matrix3d( 1.0, 0.0, 0.0, 0.0,
+// 		  0.3, 1.0, 0.0, 0.0,
+// 		  0.0, 0.0, 1.0, 0.0,
+// 		  0.0, 0.0, 0.0, 1.0)
